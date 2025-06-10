@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost Escape - Level 2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+            font-family: 'Courier New', monospace;
+        }
+
+        #gameCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .score {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: #0f0;
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 5;
+            text-shadow: 0 0 10px #0f0;
+            font-family: 'Courier New', monospace;
+            animation: textGlitch 2s infinite;
+        }
+
+        @keyframes textGlitch {
+
+            0%,
+            100% {
+                text-shadow: 0 0 10px #0f0;
+            }
+
+            50% {
+                text-shadow: 0 0 20px #0f0, 0 0 30px #0f0;
+            }
+        }
+
+        .fog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center,
+                    rgba(0, 255, 0, 0.1) 0%,
+                    rgba(0, 0, 0, 0.8) 100%);
+            pointer-events: none;
+            z-index: 2;
+            animation: fogPulse 4s infinite;
+        }
+
+        @keyframes fogPulse {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        .cube-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg,
+                    rgba(0, 255, 0, 0.1) 0%,
+                    rgba(0, 0, 0, 0.9) 100%);
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cube-background"></div>
+    <div class="score">ESCAPE TIME: <span id="score">0</span></div>
+    <canvas id="gameCanvas"></canvas>
+    <div class="fog"></div>
+    <audio id="jumpscareSound" src="ghost_scream.mp3" preload="auto"></audio>
+    <script src="ghost_escape.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Breach - Hacker Escape</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <div class="cube-container">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
+        </div>
+        <div class="start-screen">
+            <div class="butterfly"></div>
+            <h1>SYSTEM BREACH</h1>
+            <p>Hack your way through the digital maze</p>
+            <div class="start-instruction">
+                <span class="key">SPACE</span>
+                <span class="instruction-text">to initialize system</span>
+            </div>
+        </div>
+
+        <div class="score">SYSTEM BREACH: <span id="score">0</span></div>
+        <canvas id="gameCanvas"></canvas>
+        <img id="ghostImg" src="hacker.png"
+            style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 80%; opacity: 0; transition: all 0.3s;">
+        <audio id="jumpscareSound" src="breach.mp3" preload="auto"></audio>
+
+        <div class="matrix-rain"></div>
+        <div class="scan-line"></div>
+
+        <div class="virus" style="top: 20%; left: 30%; background-image: url('virus1.png');"></div>
+        <div class="virus" style="top: 60%; left: 70%; background-image: url('virus2.png');"></div>
+        <div class="virus" style="top: 40%; left: 50%; background-image: url('virus3.png');"></div>
+    </div>
+    <script src="game.js"></script>
+</body>
+
+</html>
